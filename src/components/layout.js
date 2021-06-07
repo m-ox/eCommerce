@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
+import Header from './headernavbar/header'
+import NavBar from './headernavbar/navbar'
+
 export default class Layout extends Component {
 
   render() {
     return (
-      <div className='app'>
-        <h1>Ecom</h1>
+      <div className='layout'>
         {this.props.children}
+        <Header/>
+        <NavBar/>
       </div>
     )
   }
