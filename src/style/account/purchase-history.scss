@@ -8,12 +8,23 @@
     &__border-bottom {
         border-bottom: 1px solid #F2F2F2;
     }
-}
 
-.purchases {
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 37px 0;
 
-}
 
-.purchase-detail {
-
+        .purchases {
+            margin: 37px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 80px);
+            width: 360px;
+            gap: 10px;
+        }
+        
+        .purchase-detail {
+        
+        }
+    }
 }
