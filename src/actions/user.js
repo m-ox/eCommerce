@@ -1,6 +1,15 @@
-import {
-    SET_USER_PURCHASES
-} from './types'
+import { 
+    SET_USER_PURCHASES,
+    SET_PURCHASE_DETAIL
+} from './types';
+
+export function setPurchaseDetail(_id) {
+    console.log('my best friend, the id:', _id)
+    return ({
+        type: SET_PURCHASE_DETAIL,
+        payload: _id
+    })
+}
 
 export function fetchUserPurchases() {
     return ({
@@ -8,100 +17,93 @@ export function fetchUserPurchases() {
         payload: [
             {
                 _id: 0,
-                title: 'purchase 1',
-                amount: 8.02,
-                orderNumber: 'A0053949853',
-                orderDate: new Date(),
-                creditCard: '0000',
+                total: 19.40,
+                orderNumber: 'A0048248343',
+                orderDate: new Date().toDateString(),
+                creditCard: '-0000',
                 user: {
-                    name: 'Dude Duderson',
+                    name: 'Jordan Hudgens',
                     shippingAddress: '1234 West State Street'
                 }
             },
             {
                 _id: 1,
-                title: 'purchase 2',
-                amount: 19.40,
-                orderNumber: 'A0057637456',
-                orderDate: new Date(),
-                creditCard: '0000',
+                total: 1.30,
+                orderNumber: '24343sdfkjh72',
+                orderDate: new Date().toDateString(),
+                creditCard: '-0000',
                 user: {
-                    name: 'Dude Duderson',
-                    shippingAddress: '1234 West State Street'
+                    name: 'Maxwell Nelson',
+                    shippingAddress: '1337 West State Street'
                 }
             },
             {
                 _id: 2,
-                title: 'purchase 3',
-                amount: 19.40,
-                orderNumber: 'A005342363',
-                orderDate: new Date(),
-                creditCard: '0000',
+                total: 1.30,
+                orderNumber: 'B0048248343',
+                orderDate: new Date().toDateString(),
+                creditCard: '-0000',
                 user: {
-                    name: 'Dude Duderson',
+                    name: 'Jordan Hudgens',
                     shippingAddress: '1234 West State Street'
                 }
             },
             {
                 _id: 3,
-                title: 'purchase 4',
-                amount: 12.30,
-                orderNumber: 'A0056853',
-                orderDate: new Date(),
-                creditCard: '0000',
+                total: 16.40,
+                orderNumber: 'ADFasdlfkjwe',
+                orderDate: new Date().toDateString(),
+                creditCard: '-0000',
                 user: {
-                    name: 'Dude Duderson',
+                    name: 'Max Asher Nelson',
                     shippingAddress: '1234 West State Street'
                 }
             },
             {
                 _id: 4,
-                title: 'purchase 5',
-                amount: 24.32,
-                orderNumber: 'A00532562553',
-                orderDate: new Date(),
-                creditCard: '0000',
+                total: 19.40,
+                orderNumber: 'A0048248343',
+                orderDate: new Date().toDateString(),
+                creditCard: '-0000',
                 user: {
-                    name: 'Dude Duderson',
+                    name: 'Jordan Hudgens',
                     shippingAddress: '1234 West State Street'
                 }
             },
             {
                 _id: 5,
-                title: 'purchase 6',
-                amount: 75.02,
-                orderNumber: 'A0055654543',
-                orderDate: new Date(),
-                creditCard: '0000',
+                total: 19.40,
+                orderNumber: 'A0048248343',
+                orderDate: new Date().toDateString(),
+                creditCard: '-0000',
                 user: {
-                    name: 'Dude Duderson',
+                    name: 'Jordan Hudgens',
                     shippingAddress: '1234 West State Street'
                 }
             },
             {
                 _id: 6,
-                title: 'purchase 7',
-                amount: 25.40,
-                orderNumber: 'A00554642343',
-                orderDate: new Date(),
-                creditCard: '0000',
+                total: 19.40,
+                orderNumber: 'A0048248343',
+                orderDate: new Date().toDateString(),
+                creditCard: '-0000',
                 user: {
-                    name: 'Dude Duderson',
+                    name: 'Jordan Hudgens',
                     shippingAddress: '1234 West State Street'
                 }
             },
             {
                 _id: 7,
-                title: 'purchase 8',
-                amount: 12.40,
-                orderNumber: 'A0053949853',
-                orderDate: new Date(),
-                creditCard: '0000',
+                total: 3.20,
+                orderNumber: '5UFISHDFJASUSHI298',
+                orderDate: new Date().toDateString(),
+                creditCard: '-0000',
                 user: {
-                    name: 'Dude Duderson',
-                    shippingAddress: '1234 West State Street'
+                    name: 'Andrew Wold',
+                    shippingAddress: '348 Yo State Street'
                 }
-            }
+            },
+          
         ]
     })
 }

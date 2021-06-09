@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import { connect } from 'react-redux'
-import * as actions from '../../actions'
-import AccountInformation from './accountInformation'
-import PurchaseHistory from './purchaseHistory'
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
+import AccountInformation from './accountInformation';
+import PurchaseHistory from './purchaseHistory';
 
 class Account extends Component {
 
@@ -37,20 +38,20 @@ class Account extends Component {
             }
         ]
 
-        this.props.setHeaderLinks(headerLinks)
-        this.props.setNavbarLinks(navbarLinks)
+        this.props.setHeaderLinks(headerLinks);
+        this.props.setNavbarLinks(navbarLinks);
     }
 
     renderContent() {
-        let jsx
+        let jsx;
         if(this.props.navbarLinks) {
-            this.props.navbarLinks.map(link => {
+            this.props.navbarLinks.forEach(link => {
                 if(link.active) {
-                    jsx = link.component
+                    jsx = link.component;
                 }
             })
         }
-        return jsx
+        return jsx;
     }
 
     render() {
@@ -67,6 +68,6 @@ function mapStateToProps(state) {
     return { headerLinks, navbarLinks }
 }
 
-Account = connect(mapStateToProps, actions)(Account)
+Account = connect(mapStateToProps, actions)(Account);
 
 export default Account;
