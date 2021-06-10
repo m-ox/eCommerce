@@ -1,12 +1,11 @@
-import { filterProductsWithCategoryId } from '.'
 import {
     SET_SHOP_CATEGORIES,
     SET_NAVBAR_LINKS,
     SET_SHOP_PRODUCTS,
     FILTER_PRODUCTS_WITH_CATEGORY_ID
-} from './types'
+} from './types';
 
-export function filterProductWithCategoryId(_id) {
+export function filterProductWithCategoryId (_id) {
     return ({
         type: FILTER_PRODUCTS_WITH_CATEGORY_ID,
         payload: _id

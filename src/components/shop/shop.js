@@ -27,16 +27,32 @@ class Shop extends Component {
 
     shouldComponentUpdate(nextProps) {
         if(this.props != nextProps) {
-            this.props.setNavbarLinks(nextProps.categories)
+            this.props.setNavbarLinks(nextProps.categories,
+                (_id) => this.props.filterProductWithCategoryId(_id))
         }
         return true
     }
 
     render() {
+        console.log(this.props)
         return (
             <div className='shop'>
                 {/* shop search bar component */}
-                {/* product components */}
+                <div className='shop__products'>
+                    {this.props.filteredProducts
+                        .map(product => {
+                            return (
+                                <div key={product._id} className='shop-product'>
+                                    <div className='shop-product__title'>
+                                        {product.title}
+                                    </div>
+                                    <div className='shop-product__description'>
+                                        {product.description}
+                                    </div>
+                            </div>
+                            )
+                        })}
+                </div>
                 {/* cart button */}
             </div>
         )
@@ -44,10 +60,12 @@ class Shop extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state)
-    const {categories} = state.shop
+    const {categories, filteredProducts} = state.shop
 
-    return { categories }
+    return {
+        categories,
+        filteredProducts
+    }
 }
 
 Shop = connect(mapStateToProps, actions) (Shop);
