@@ -1,0 +1,29 @@
+.shop-search-bar {
+    input {
+        font-size: 18px;
+        background: rgb(147, 186, 218);
+
+        height: 40px;
+        width: 100%;
+        padding: 0 15px;
+        margin: 10px 0;
+        border: 1px solid #E6E6E6;
+        border-radius: 20px;
+    }
+}
+
+.search-bar-grid {
+    display: grid;
+    grid-template-rows: [s] 1fr [e];
+    grid-template-columns: 20px [s] 1fr [e];
+
+    &__input {
+        grid-row: 1/e;
+        
+        &:focus {
+            border: unset;
+            outline: unset;
+        }
+        
+    }
+}
