@@ -6,6 +6,7 @@ import * as actions from '../../actions'
 class Shop extends Component {
 
     componentDidMount() {
+
         const headerLinks = [
             {
                 _id: 0,
@@ -16,10 +17,19 @@ class Shop extends Component {
                 path: '/'
             }
         ]
+
         this.props.setHeaderLinks(headerLinks)
+
         this.props.fetchShopCategories()
-        
+
         this.props.fetchShopProducts()
+    }
+
+    shouldComponentUpdate(nextProps) {
+        if(this.props != nextProps) {
+            this.props.setNavbarLinks(nextProps.categories)
+        }
+        return true
     }
 
     render() {
@@ -34,7 +44,10 @@ class Shop extends Component {
 }
 
 function mapStateToProps(state) {
-    return { state }
+    console.log(state)
+    const {categories} = state.shop
+
+    return { categories }
 }
 
 Shop = connect(mapStateToProps, actions) (Shop);
