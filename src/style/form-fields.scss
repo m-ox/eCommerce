@@ -41,10 +41,38 @@
         background: #999;
         width: 137px;
     }
+
+    &__label {
+        font-size: 14px;
+    }
 }
 
 .sign-in-form {
     &__line {
         
+    }
+}
+
+.form-button-long-gray {
+    display: grid;
+    gap: 6.5px;
+
+    &__button {
+        height: 38px;
+        width: 243px;
+        border: none;
+        border-radius: 20px;
+        background: #999;
+        font-size: 16px;
+        color: white;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__label {
+        padding-left: 20px;
+        font-size: 14px;
     }
 }
