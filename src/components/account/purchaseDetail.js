@@ -56,3 +56,7 @@ function mapStateToProps(state) {
         ...purchaseDetail
     }
 }
+
+PurchaseDetail = connect(mapStateToProps)(PurchaseDetail)
+
+export default PurchaseDetail

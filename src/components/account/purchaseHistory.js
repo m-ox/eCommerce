@@ -5,6 +5,7 @@ import Purchases from './purchases';
 import PurchaseDetail from './purchaseDetail';
 
 class PurchaseHistory extends Component {
+    
     render() {
         return (
             <div className='purchase-history'>
