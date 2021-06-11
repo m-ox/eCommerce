@@ -13,7 +13,7 @@ export function filterProductsWithQuery (fields) {
     })
 }
 
-export function filterProductsWithCategoryId (_id) {
+export function filterProductWithCategoryId (_id) {
     return ({
         type: FILTER_PRODUCTS_WITH_CATEGORY_ID,
         payload: _id
