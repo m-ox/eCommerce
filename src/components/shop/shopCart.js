@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 import { FaTimes } from 'react-icons/fa'
+import { CartProduct } from './cartProduct'
+
 
 function CartButton({className, icon}) {
     return (
@@ -12,7 +14,14 @@ function CartButton({className, icon}) {
 
 function CartContent ({ className, products }) {
     let count = products.length
-    let productsJSX = products.map(product => <h1 key={product}> {product} </h1>)
+    let productsJSX = products.map(product =>
+
+        <div key={product} className='cart-product'>
+            <h1 className='product-content'>
+                {product}
+            </h1>
+        </div>)
+
 
     return (
         <div className={`${className} cart-content`}>
@@ -39,7 +48,7 @@ function CartFooter ({className, products}) {
             <div className='cart-footer__subtotal'>
                 Subtotal
             </div>
-            <div classname='cart-footer__price'>
+            <div className='cart-footer__price'>
                 ${price}
             </div>
         </div>
@@ -52,7 +61,11 @@ export default class ShopCart extends Component {
         return (
             <div className={`${className} shop-cart`}>
                 <CartButton className='shop-cart__toggle' icon='fas fa-times' />
-                <CartContent className='shop-cart__content' products={[1, 2, 3, 4]}/>
+                <div className='cart-scrolly'>
+                    <CartContent className='shop-cart__content' products={[
+                            1, 2, 3, 4
+                        ]}/>
+                </div>
             </div>
         )
     }
